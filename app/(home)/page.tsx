@@ -5,6 +5,7 @@ import Search from "./_components/search";
 import BookingItem from "../_components/booking-item";
 import { db } from "../_lib/prisma ";
 import BarbershopItem from "./_components/barbershop-item";
+import { Key } from "react";
 
 export default async function Home() {
 
@@ -36,7 +37,7 @@ export default async function Home() {
         <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Recomendados</h2>
 
         <div className="flex px-5 gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {barbershops.map((barbershop) => (
+          {barbershops.map((barbershop: { id: Key | null | undefined; }) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}          
         </div>
@@ -46,7 +47,7 @@ export default async function Home() {
         <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Recomendados</h2>
 
         <div className="flex px-5 gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {barbershops.map((barbershop) => (
+          {barbershops.map((barbershop: { id: Key | null | undefined; }) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}          
         </div>
